@@ -1,0 +1,23 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
+/* Body */
+
+.portfolio-gallery {
+    width: 100vw;
+    height: 500%;
+    /* border: 1px solid red; */
+    margin: 20px;
+    
+}
+
+.portfolio-container h1 {
+    text-align: center;
+}
+
+.portfolio-container h2 {
+    text-align: center;
+}

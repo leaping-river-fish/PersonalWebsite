@@ -1,0 +1,78 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Body */
+.intro {
+    width: 80%;
+    height: 70%;
+    top: 5%;
+    margin-right: auto;
+    margin-left: auto;  
+    padding: 0;
+    position: relative;
+    color: #FFFFFF;
+    /* border: 1px solid red; */
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100vh;
+  height: 50vh;
+  /* border: 1px solid red; */
+}
+
+
+  /* Text styling */
+  .text {
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .text h1 {
+    font-size: 2.5rem; 
+    margin-bottom: 10px;
+  }
+  
+  .text p {
+    font-size: 1.2rem; 
+    margin-bottom: 20px; 
+  }
+  
+  .text span {
+    font-weight: bold; 
+  }
+  
+  .intro {
+    margin-top: 36px; 
+  }
+  
+
+.text h1 span{
+    background: var(--gradient2);
+    background-repeat: no-repeat;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-size: 0%;
+}
+.text h1 span:first-child{
+    animation: textcolor1 3s /*linear*/ infinite alternate;
+}
+@keyframes textcolor1 {
+    0%{
+        background-size: 0%;
+    }
+    40%{
+        background-size: 40%;
+    }
+    100%{
+        background-size: 100%;
+    }
+}

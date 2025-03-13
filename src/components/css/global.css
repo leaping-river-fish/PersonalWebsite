@@ -1,0 +1,219 @@
+/* gradients */
+:root {
+
+    --gradient2: linear-gradient(
+        45deg,
+        #333333,
+        #dd1818
+    );
+    --gradient3: linear-gradient(135deg,
+    #000000,
+    #434343,
+    #000000
+    );
+    --gradient4: linear-gradient(
+        45deg,
+        #333333,
+        #dd1818,
+        #333333
+    );
+
+    
+}
+
+/* body */
+
+html, body {
+    /* height: 100%; */
+    margin: 0;
+    background-color: #f0f0f0;
+    background-image: var(--gradient3);
+    background-size: cover;
+    overflow-x: hidden
+}
+
+/* .container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+} */
+
+/* contact-btn
+
+.contact-btn{
+    position: fixed;
+    top: 50px;
+    right: 80px;
+    color: #FFFFFF;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(45deg, #000000,#000000), radial-gradient(circle at top left, #333333,#dd1818);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    transition: ease-out 0.3s;
+    width: 110px;
+    height: 39px;
+    text-align: center;
+    justify-content: space-evenly;
+    text-align: center;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+}
+.contact-btn span{
+    display: block;
+    padding: 8px 22px;
+    text-decoration: none;
+    border-bottom: none;
+    z-index: 2;
+    transition: color 0.3s ease-out;
+}
+
+.contact-btn:hover::before {
+    opacity: 1;
+}
+
+.contact-btn:hover{
+    cursor: pointer;
+    box-shadow: inset 110px 0 0 0 white;
+}
+
+.contact-btn a {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; 
+    color: #FFFFFF; 
+    line-height: 39px;
+    z-index: 2;
+    transition: color 0.3s ease-out;
+}
+
+.contact-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white; 
+    z-index: 0; 
+    opacity: 0; 
+    transition: 0.3s ease-out opacity;
+}
+
+.contact-btn:hover a {
+    color: black;
+}
+
+.contact-btn:focus-visible {
+    color: white !important; 
+    box-shadow: none; 
+    background-color: transparent !important; 
+}
+
+/* highlight-btn */
+
+/* .highlight-btn{
+    width: 100px;
+    height: 50px;
+    border: none;
+    color: white;
+    background-color: transparent;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: inset 0 0 0 0 black;
+    outline: none;
+    position: relative;
+    z-index: 1;
+    line-height: 50px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+}
+.highlight-btn:hover{
+    cursor: pointer;
+    color: black;
+}
+.highlight-btn:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    background-color: white;
+    z-index: -1; 
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+.highlight-btn:hover::before{
+    transition: 0.2s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+.highlight-btn:hover {
+    cursor: pointer;
+    color: black; 
+}
+
+.highlight-btn a {
+    display: block; 
+    width: 100%;
+    height: 100%;
+    text-decoration: none; 
+    color: inherit; 
+    text-align: center;
+}
+
+.highlight-btn:focus-visible {
+    outline: none; 
+    box-shadow: none; 
+    color: white !important; 
+}
+
+/* subpages */
+
+/* a:link {
+    text-decoration: none; 
+    color: white;
+}
+a:visited {
+    text-decoration: none; 
+    color: white;
+}
+a:focus {
+    text-decoration: none; 
+    color: black;
+}
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+a:active{
+    text-decoration: none; 
+    color: black;
+}   */
+
+/* scrollbar */
+
+::-webkit-scrollbar{
+    width: 15px;
+
+}
+::-webkit-scrollbar-track {
+    background-image: var(--gradient3);
+}
+::-webkit-scrollbar-thumb{
+    background-image: var(--gradient4);
+    border-radius: 10px;
+}
+

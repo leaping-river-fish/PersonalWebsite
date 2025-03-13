@@ -1,0 +1,138 @@
+/*to do: finish and implement chat bot backend, improve visual of chat*/
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.about-wrapper {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.about-text {
+    text-align: center;
+    color: #FFFFFF;
+    width: 100%;
+    padding-top: 0px;
+    margin: 0 auto;
+    max-width: 800px;
+    /* border: 1px solid red; */
+}
+
+/* Main chat container */
+.chat-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: black;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: hidden;
+  min-height: 100px; /* Starts short */
+  max-height: 400px; /* Grows up to this height */
+  transition: max-height 0.3s ease-in-out;
+  
+}
+
+.chat-container.expanded {
+  overflow-y: auto; /* Enables scroll when full */
+}
+
+.chat-container h2 {
+  text-align: center;
+  font-size: 1.5em;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.chat-box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-box input {
+  padding: 12px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: hsl(0, 0%, 30%);
+  width: 80%;
+}
+
+.chat-box input:focus {
+  border-color: #dd1818;
+  box-shadow: 0 0 5px rgba(221, 24, 24, 0.6);
+}
+
+.chat-box button {
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  background-color: #dd1818;
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chat-box button:not(:disabled):hover {
+  background-color: #b51b1b;
+  transform: translateY(-2px);
+}
+
+.user-message, .assistant-message {
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 75%;
+  margin-bottom: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+  font-size: 1.1em;
+  display: inline-block;
+}
+
+.user-message {
+  background-color: #d9534f;
+  color: hsl(0, 0%, 30%);
+  align-self: flex-end;
+}
+
+.assistant-message {
+  background-color: #333333;
+  color: hsl(0, 0%, 30%);
+  align-self: flex-start;
+}
+
+.response {
+  background-color: #333333;
+  color: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  font-size: 1.2em;
+  margin-top: 20px;
+  border-left: 8px solid #dd1818;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  word-wrap: break-word;
+}
+  
+  
+  
+

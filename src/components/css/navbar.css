@@ -1,0 +1,200 @@
+/* Navigation bar */
+
+nav {
+  width: 100vw;
+  height: 40px;
+  background-color: transparent;
+  padding: 20px;
+  display: inline-flex;
+  justify-content: left;
+  align-items: center;
+  position: fixed sticky;
+  z-index: 999;
+  /* border: 1px solid red; */
+  top: 0;
+  left: 0;
+}
+
+.logo img {
+  width: 75px;
+  margin-top: 12px;
+  margin-right: 0px;
+  box-shadow: inset 0 0 0 0 black;
+  outline: none;
+
+}
+
+/* highlight-btn */
+
+.highlight-btn{
+    width: 100px;
+    height: 50px;
+    border: none;
+    color: white;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 0 0 black;
+    outline: none;
+    position: relative;
+    z-index: 1;
+    line-height: 50px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    padding: 0;
+}
+
+.highlight-btn:hover{
+    cursor: pointer;
+    color: black;
+}
+.highlight-btn:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    background-color: white;
+    z-index: -1; 
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+.highlight-btn:hover::before{
+    transition: 0.2s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+.highlight-btn:hover {
+    cursor: pointer;
+    color: black; 
+}
+
+.highlight-btn a {
+    display: block; 
+    width: 100%;
+    height: 100%;
+    text-decoration: none; 
+    color: inherit; 
+    text-align: center;
+    line-height: 50px;
+}
+
+.highlight-btn:focus-visible {
+    outline: none; 
+    box-shadow: none; 
+    color: white !important; 
+}
+
+.highlight-btn a:active {
+  color: white;
+}
+
+.highlight-btn a:focus, 
+.highlight-btn a:visited {
+  color: inherit;
+}
+
+/* contact-btn */
+
+.contact-btn {
+  width: 110px;
+  height: 39px;
+  left: 830px;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  color: white;
+  background-image: linear-gradient(45deg, #000000,#000000), radial-gradient(circle at top left, #333333,#dd1818);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  transition: ease-out 0.3s;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 0 black;
+  outline: none;
+  position: relative;
+  z-index: 1;
+  line-height: 50px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  padding: 0;
+}
+
+.contact-btn a{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-btn:hover::before {
+  opacity: 1;
+}
+
+.contact-btn:hover{
+  cursor: pointer;
+  box-shadow: inset 110px 0 0 0 white;
+}
+
+.contact-btn:hover a {
+  color: black !important;
+}
+
+.contact-btn:focus-visible {
+  color: white !important; 
+  box-shadow: none; 
+  background-color: transparent !important; 
+}
+
+.contact-btn a:focus, 
+.contact-btn a:visited {
+  color: inherit;
+}
+
+
+
+/* subpages */
+
+a:link {
+  text-decoration: none; 
+  color: white;
+}
+a:visited {
+  text-decoration: none; 
+  color: white;
+}
+a:focus {
+  text-decoration: none; 
+  color: black;
+}
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+a:active{
+  text-decoration: none; 
+  color: black;
+} 
+
+@media (max-width: 768px) {
+    .navbar {
+      padding: 1rem;
+      justify-content: center; 
+    }
+  
+    .navbar ul {
+      flex-direction: column; 
+      align-items: center; 
+    }
+  
+    .navbar li {
+      margin: 10px 0; 
+    }
+  }
