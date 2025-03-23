@@ -1,6 +1,6 @@
 /*to do: finish and implement chat bot backend, improve visual of chat*/
 
-body, html {
+ body, html {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -9,8 +9,10 @@ body, html {
 .about-wrapper {
   margin-top: auto;
   margin-bottom: auto;
+  margin-right: auto;
+  margin-left: auto;
 }
-
+/*
 .about-text {
     text-align: center;
     color: #FFFFFF;
@@ -18,10 +20,9 @@ body, html {
     padding-top: 0px;
     margin: 0 auto;
     max-width: 800px;
-    /* border: 1px solid red; */
 }
 
-/* Main chat container */
+
 .chat-container {
   width: 100%;
   max-width: 1000px;
@@ -31,19 +32,19 @@ body, html {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   font-family: 'Arial', sans-serif;
-  color: #333;
+  color: #FFFFFF;
   display: flex;
   flex-direction: column;
   gap: 15px;
   overflow-y: hidden;
-  min-height: 100px; /* Starts short */
-  max-height: 400px; /* Grows up to this height */
+  min-height: 100px;
+  max-height: 400px; 
   transition: max-height 0.3s ease-in-out;
   
 }
 
 .chat-container.expanded {
-  overflow-y: auto; /* Enables scroll when full */
+  overflow-y: auto; 
 }
 
 .chat-container h2 {
@@ -131,7 +132,7 @@ body, html {
   align-items: center;
   text-align: center;
   word-wrap: break-word;
-}
+} */
   
   
   
