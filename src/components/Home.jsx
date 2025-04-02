@@ -37,15 +37,15 @@ const Home = () => {
   }, []);
   return (
       <div className="home-container">
-        {/* Intro Section */}
-        <div className="intro">
-          <div className="text">
-            <p>Hello,</p>
+        {/* Intro Section */} 
+        <div className="home-intro">
+          <div className="home-text">
+            <p className="home-greeting">Hello,</p>
             <h1>
               I'm <span>{currentPhrase}</span>
             </h1>
-            <p>I am a Systems Design Engineer student at the University of Waterloo</p>
-          </div>
+            <p className="home-greeting">I am a Systems Design Engineer student at the University of Waterloo</p>
+          </div> {/*Train like you've never won, play like you've never lost*/}
         </div>
       </div>
   );

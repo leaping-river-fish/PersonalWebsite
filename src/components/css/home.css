@@ -5,7 +5,7 @@ body, html {
 }
 
 /* Body */
-.intro {
+.home-intro {
     width: 80%;
     height: 70%;
     top: 5%;
@@ -31,38 +31,38 @@ body, html {
 
 
   /* Text styling */
-  .text {
+  .home-text {
     line-height: 1.6;
     margin-bottom: 20px;
   }
   
-  .text h1 {
+  .home-text h1 {
     font-size: 2.5rem; 
     margin-bottom: 10px;
   }
   
-  .text p {
+  .home-greeting {
     font-size: 1.2rem; 
     margin-bottom: 20px; 
   }
   
-  .text span {
+  .home-text span {
     font-weight: bold; 
   }
   
-  .intro {
+  .home-intro {
     margin-top: 36px; 
   }
   
 
-.text h1 span{
+.home-text h1 span{
     background: var(--gradient2);
     background-repeat: no-repeat;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-size: 0%;
 }
-.text h1 span:first-child{
+.home-text h1 span:first-child{
     animation: textcolor1 3s /*linear*/ infinite alternate;
 }
 @keyframes textcolor1 {

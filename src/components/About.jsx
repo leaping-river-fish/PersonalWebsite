@@ -1,11 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './css/about.css';
 
 
 function About() {
-  const [message, setMessage] = useState("")
-  const [chats, setChats] = useState([])
-  const [isTyping, setIsTyping] = useState(false)
+  const dotAnimation = [
+    "",
+    ".",
+    "..",
+    "..."
+  ];
+
+  const [message, setMessage] = useState("");
+  const [chats, setChats] = useState([]);
+  const [isTyping, setIsTyping] = useState(false);
+  const [currentPhase, setCurrentPhase] = useState([0]);
+  const [index, setIndex] = useState(0);
+
+  useEffect (() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % dotAnimation.length);
+    }, 600)
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect (() => {
+    setCurrentPhase(dotAnimation[index]);
+  }, [index]);
 
   const chat = async (e, message) => {
     e.preventDefault();
@@ -43,24 +64,20 @@ function About() {
       <div className="about-container">
         {/* AI Chat Section */}
         <div className="chat-container">
-          <h2>What Would You Like to Know?</h2>
+          <h1 className="about-text">What Would You Like to Know?</h1>
 
           <section className="chat-box">
             {chats && chats.length
               ? chats.map((chat, index) => (
                 <p key={index} className={chat.role === "user" ? "user_msg" : ""}>
-                  <span>
-                    <b>{chat.role.toUpperCase()}</b>
-                  </span>
-                  <span>:</span>
                   <span>{chat.content}</span>
                 </p>
               ))
               : ""}
           </section>
           <div className={isTyping ? "" : "hide"}>
-            <p>
-              <i>{isTyping ? "Typing..." : ""}</i>
+            <p className="chat">
+              <i>{isTyping ? `Typing${currentPhase}` : ""}</i>
             </p>
           </div>
 
