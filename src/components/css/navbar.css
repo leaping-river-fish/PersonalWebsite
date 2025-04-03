@@ -81,6 +81,7 @@ nav {
     color: inherit; 
     text-align: center;
     line-height: 50px;
+    font-weight: bold;
 }
 
 .highlight-btn:focus-visible {
@@ -132,6 +133,7 @@ nav {
   justify-content: center;
   text-decoration: none;
   color: inherit;
+  font-weight: bold;
 }
 
 .contact-btn:hover::before {

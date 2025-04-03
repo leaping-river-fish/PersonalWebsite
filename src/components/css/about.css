@@ -80,7 +80,7 @@ p span:first-child {
   display: none;
 }
 
-form {
+.about-form {
   text-align: center;
   position: sticky;
   bottom: 0;
@@ -89,7 +89,7 @@ form {
   width: 100%;
 }
 
-input {
+.about-input {
   width: 100%;
   height: 40px;
   border: none;
@@ -100,7 +100,7 @@ input {
   color: #FFFFFF;
 }
 
-input:focus {
+.about-input:focus {
   outline: none;
   background-color: rgb(40, 35, 35);
 }

@@ -2,6 +2,7 @@ body, html {
   margin: 0;
   padding: 0;
   width: 100%;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Body */
@@ -9,11 +10,12 @@ body, html {
     width: 80%;
     height: 70%;
     top: 5%;
-    margin-right: auto;
-    margin-left: auto;  
+    margin: auto;
     padding: 0;
     position: relative;
     color: #FFFFFF;
+    justify-content: space-between;
+    display: flex;
     /* border: 1px solid red; */
 }
 
@@ -24,8 +26,9 @@ body, html {
   justify-content: flex-start;
   margin-top: auto;
   margin-bottom: auto;
-  width: 100vh;
+  width: 100vw;
   height: 50vh;
+  gap: 20px;
   /* border: 1px solid red; */
 }
 
@@ -34,11 +37,14 @@ body, html {
   .home-text {
     line-height: 1.6;
     margin-bottom: 20px;
+    margin-right: 100px;
+    flex: 1;
   }
   
   .home-text h1 {
     font-size: 2.5rem; 
     margin-bottom: 10px;
+    white-space: nowrap;
   }
   
   .home-greeting {
@@ -72,4 +78,25 @@ body, html {
     100%{
         background-size: 100%;
     }
+}
+
+.home-quote {
+  display: flex;
+  font-size: 1.7rem;
+  flex: 1;
+  /* border: 1px solid red; */
+  font-style: italic;
+  margin: auto;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.quote {
+    animation: fadeInOut 10s infinite; 
+    transition: opacity 1s ease-in-out;
+    position: fixed;
 }

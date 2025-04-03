@@ -81,8 +81,8 @@ function About() {
             </p>
           </div>
 
-          <form action="" onSubmit={(e) => chat(e, message)}>
-            <input
+          <form className="about-form" action="" onSubmit={(e) => chat(e, message)}>
+            <input className="about-input"
               type="text"
               name="message"
               value={message}
