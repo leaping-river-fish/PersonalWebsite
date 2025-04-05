@@ -125,3 +125,10 @@ p span:first-child {
   background: rgba(255, 255, 255, 0.7); 
 }
 
+.clear-chat-btn {
+  align-items: center;
+  background-color: darkslategray;
+  margin-top: 15px;
+  color: #FFFFFF;
+}
+

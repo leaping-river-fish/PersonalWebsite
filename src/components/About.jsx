@@ -9,9 +9,11 @@ function About() {
     "..",
     "..."
   ];
-
   const [message, setMessage] = useState("");
-  const [chats, setChats] = useState([]);
+  const [chats, setChats] = useState(() => {
+    const savedChats = sessionStorage.getItem("chatMessages");
+    return savedChats ? JSON.parse(savedChats) : [];
+  });
   const [isTyping, setIsTyping] = useState(false);
   const [currentPhase, setCurrentPhase] = useState([0]);
   const [index, setIndex] = useState(0);
@@ -28,35 +30,63 @@ function About() {
     setCurrentPhase(dotAnimation[index]);
   }, [index]);
 
+  useEffect (() => {
+    sessionStorage.setItem("chatMessages", JSON.stringify(chats));
+  }, [chats]);
+
   const chat = async (e, message) => {
     e.preventDefault();
 
     if (!message) return;
-    setIsTyping(true);
 
-    let msgs = chats;
-    msgs.push({ role: "user", content: message });
-    setChats(msgs);
-    scrollTo(0, 1e10);
+    setIsTyping(true);
+    let updatedChats = [...chats, { role: "user", content: message }];
+    setChats(updatedChats);
+
+    // let msgs = chats;
+    // msgs.push({ role: "user", content: message });
+    // setChats(msgs);
+    // scrollTo(0, 1e10);
 
     setMessage("");
 
-    fetch("http://localhost:5000/", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        chats
-      })
-    }).then((response) => response.json())
-      .then((data) => {
-        msgs.push(data.output);
-        setChats(msgs);
-        setIsTyping(false);
-        scrollTo(0, 1e10);
-      })
-      .catch(error => console.log(error));
+    try {
+      const response = await fetch("http://localhost:5001/", {
+        method: "POST",
+        headers: { "Content-Type": "applications/json" },
+        body: JSON.stringify({ chats: updatedChats }),
+      });
+
+      const data = await response.json();
+      updatedChats.push(data.output);
+      setChats(updatedChats);
+      setIsTyping(false);
+    } catch (error) {
+      console.log("Error fetching chat response:", error);
+      setIsTyping(false);
+    }
+
+  //   fetch("http://localhost:5000/", {
+  //     method: "post",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     body: JSON.stringify({
+  //       chats
+  //     })
+  //   }).then((response) => response.json())
+  //     .then((data) => {
+  //       msgs.push(data.output);
+  //       setChats(msgs);
+  //       setIsTyping(false);
+  //       scrollTo(0, 1e10);
+  //     })
+  //     .catch(error => console.log(error));
+  };
+
+  const clearChat = () => {
+    setChats([]);
+    sessionStorage.removeItem("chatMessages");
   };
 
   return (
@@ -90,7 +120,11 @@ function About() {
               onChange={(e) => setMessage(e.target.value)}
             />
           </form>
-
+          {chats.length > 0 && (
+            <button className="clear-chat-btn" onClick={clearChat}>
+              Clear Chat
+            </button>
+          )}
         </div>
       </div>
     </div>
