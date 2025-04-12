@@ -151,6 +151,29 @@ html, body {
     color: #dd1818;
 }
 
+.popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 8px;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+}
+
+.popup.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.popup.error {
+    background-color: #f44336; 
+    color: white;
+  }
+
 /* Footer */
 .footer {
     width: 100vw;

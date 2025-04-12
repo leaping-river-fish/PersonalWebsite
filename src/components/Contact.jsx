@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import { React, useEffect, useState } from "react";
 import "./css/contact.css";
 
 
@@ -12,7 +11,10 @@ function Contact() {
       message: ""
     });
 
-    const [status, setStatus] = useState("");
+    const [status, setStatus] = useState({
+      type: '',
+      message: ''
+    });
 
     const handleChange = (e) => {
       setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -20,7 +22,7 @@ function Contact() {
 
     const handleSubmit = async (e) => {
       e.preventDefault();
-      setStatus("Sending...");
+      setStatus({ type: "", message: "Sending..." });
 
       try {
         const response = await fetch("http://localhost:5001/send", {
@@ -34,16 +36,26 @@ function Contact() {
         const result = await response.json();
 
         if (response.ok) {
-          setStatus("Message sent successfully!");
+          setStatus({
+            type: "success", 
+            message: "Message Sent Successfully!"
+          });
+
           setFormData({ name: "", email: "", subject: "", message: "" });
+
+          setTimeout(() => setStatus({ message: "", type: "" }), 5000);
         } else {
-          setStatus(`Error: ${result.error || "Failed to send message"}`);
+          setStatus({ 
+            type: "error",
+            message: result.error || "Failed to send message"
+          });
         }
       } catch (error) {
         console.error("Fetch error:", error);
         setStatus("Error: Could not connect to server.");
       }
     };
+
 
     return (
       <div className="page-container">
@@ -90,7 +102,11 @@ function Contact() {
                             <button type="submit" className="submit-btn">Send Message</button>
                   </form>
 
-                  {/* {status && <p className="status-message">{status}</p>} */}
+                  {status && (
+                    <div className={`popup ${status.type}`}>
+                      {status.message}
+                    </div>
+                  )}
         
                   <div className="contact-info">
                     <h2>Get in Touch</h2>

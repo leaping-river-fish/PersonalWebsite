@@ -75,6 +75,11 @@ p span:first-child {
   align-self: flex-end;
 }
 
+.assistant_msg {
+  text-align: left;
+  align-self: flex-start;
+}
+
 .hide {
   visibility: hidden;
   display: none;

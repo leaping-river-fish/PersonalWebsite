@@ -51,15 +51,18 @@ function About() {
     setMessage("");
 
     try {
-      const response = await fetch("http://localhost:5001/", {
+      const response = await fetch("http://localhost:5000/", {
         method: "POST",
-        headers: { "Content-Type": "applications/json" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ chats: updatedChats }),
       });
 
       const data = await response.json();
-      updatedChats.push(data.output);
-      setChats(updatedChats);
+      console.log("AI responded with:", data);
+      // updatedChats.push(data.output);
+      // setChats(updatedChats);
+      const newChats = [...updatedChats, data.output];
+      setChats(newChats);
       setIsTyping(false);
     } catch (error) {
       console.log("Error fetching chat response:", error);
@@ -99,7 +102,7 @@ function About() {
           <section className="chat-box">
             {chats && chats.length
               ? chats.map((chat, index) => (
-                <p key={index} className={chat.role === "user" ? "user_msg" : ""}>
+                <p key={index} className={chat.role === "user" ? "user_msg" : "assistant_msg"}>
                   <span>{chat.content}</span>
                 </p>
               ))
