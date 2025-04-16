@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact"
 import Portfolio from "./components/Portfolio";
+import Projects from "./components/Projects"
 import { ImageProvider } from './ImageContext';
 import './App.css'
 
@@ -53,6 +54,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
        </ImageProvider>

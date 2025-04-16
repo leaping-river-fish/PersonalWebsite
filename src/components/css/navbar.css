@@ -164,26 +164,18 @@ nav {
 
 /* subpages */
 
-a:link {
-  text-decoration: none; 
+.navbar a:link,
+.navbar a:visited {
+  text-decoration: none;
   color: white;
 }
-a:visited {
-  text-decoration: none; 
-  color: white;
-}
-a:focus {
-  text-decoration: none; 
-  color: black;
-}
-a:hover {
+
+.navbar a:focus,
+.navbar a:hover,
+.navbar a:active {
   text-decoration: none;
   color: black;
 }
-a:active{
-  text-decoration: none; 
-  color: black;
-} 
 
 @media (max-width: 768px) {
     .navbar {

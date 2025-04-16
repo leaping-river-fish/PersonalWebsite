@@ -131,18 +131,31 @@ html, body {
     text-decoration: none;
 }
 
+.email a, .phone a {
+    transition: color 0.3s ease;
+}
+
+.email a:hover {
+    color: #dd1818;
+}
+
+.phone a:hover {
+    color: #dd1818;
+}
+
 .contact-info a:hover {
     color: #dd1818;
 }
 
 /* Social Media Links */
 .social-media {
-    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
 .social-link {
     display: inline-block;
-    margin-right: 15px;
     color: #FFFFFF;
     transition: color 0.3s ease;
 }

@@ -18,6 +18,7 @@ const Home = () => {
     "'Train like you've never won, play like you've never lost'",
     "'If we keep holding onto yesterday, what will we be tomorrow?'",
     "'Even the best would fail if they kept doing the same thing'",
+    "'The only difference between courage and fear is the direction that you run'",
   ];
 
   const [currentPhrase, setCurrentPhrase] = useState([0]);
