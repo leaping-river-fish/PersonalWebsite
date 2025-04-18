@@ -67,11 +67,10 @@
     border-radius: 16px;
     font-size: 0.9rem;
     margin: 0.2rem;
-    transition: background-color 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .tag:hover {
-    background-color: #1c64f2;
-    color: #fff;
+    transform: translateY(-4px);
 }
 

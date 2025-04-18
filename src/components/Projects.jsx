@@ -9,7 +9,7 @@ const hardcodedProjects = [
         description: "An app designed using Figma, SHAD Design Entrepreneurship project",
         link: "",
         image: "/images_tbs/ecosystem_logo.png",
-        tags: ["Figma", "Canva", "Design", "Group"],
+        tags: ["figma", "canva", "design", "group"],
     },
 
     {
@@ -18,9 +18,17 @@ const hardcodedProjects = [
         description: "Car designed and assembled in SolidWorks",
         link: "",
         image: "/images_tbs/solidworks_car.png",
-        tags: ["SolidWorks", "Design"],
+        tags: ["solidworks", "design"],
     },
 ]
+
+const colors = {
+    figma: "#F24E1E",
+    canva: "#00C6A3",
+    design: "#B57EDC",
+    solidworks: "#009C6A",
+    group: "#4682B4",
+}
 
 function Projects() {
     return (
@@ -53,11 +61,21 @@ function Projects() {
                                 <p>{project.description}</p>
                             </div>
                             <div className="tags">
-                                {project.tags.map((tag, idx) => (
-                                    <span className="tag" key={idx}>
-                                    {tag}
+                                {project.tags.map((tag, idx) => {
+                                    const tagColor = colors[tag.toLowerCase()];
+                                    return (
+                                        <span 
+                                        className="tag" 
+                                        key={idx}
+                                        style={{ 
+                                            backgroundColor: tagColor,
+                                            color: "#fff" 
+                                        }}
+                                    >
+                                        {tag}
                                     </span>
-                                ))}
+                                    );
+                                })}
                             </div>
                         </a>
                     ))}
