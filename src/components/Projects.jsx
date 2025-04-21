@@ -28,8 +28,33 @@ const hardcodedProjects = [
         link: "",
         image: "/images_tbs/solidworks_car.png",
         tags: ["solidworks", "design"],
+        showcaseimages: [], // add images
+        files: [], // add downloadable files?
+        modelPath: "/models/car.glb",
+    },
+
+    {
+        id: 3,
+        name: "Nintendo Switch Recreation",
+        description: "Solidworks recreation test with an image reference",
+        link: "",
+        image: "/images_tbs/nintendo.png",
+        tags: ["solidworks", "design"],
         showcaseimages: [],
         files: [],
+        modelPath: "models/nintendo.glb",
+    },
+
+    {
+        id: 4,
+        name: "Puzzle Project",
+        description: "Trillium Flower Popper",
+        link: "",
+        image: "/images_tbs/puzzle.png",
+        tags: ["solidworks", "design", "group"],
+        showcaseimages: [], // add images
+        files: [], // add downloadable files?
+        modelPath: "models/puzzle.glb",
     },
 ]
 

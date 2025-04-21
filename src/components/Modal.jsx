@@ -1,5 +1,6 @@
 import { React } from "react";
 import "./css/modal.css";
+import ModelView from "./ModelView";
 
 
 const Modal = ({ project, onClose }) => {
@@ -10,6 +11,13 @@ const Modal = ({ project, onClose }) => {
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <h2>{project.name}</h2>
                 <p>{project.description}</p>
+
+                {project.modelPath && (
+                    <div style={{ width: "100%", height: "400px" }}> 
+                        <ModelView modelPath={project.modelPath} />
+                    </div>
+                )}
+                <p>3D model, interact and zoom </p>
 
                 {project.showcaseimages && project.showcaseimages.map((img, idx) => (
                     <img
