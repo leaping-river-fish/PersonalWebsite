@@ -7,7 +7,7 @@ const Navbar = () => {
     return (
         <nav>
           <div className="logo">
-            <img src="/weblogo.png" alt="Website Logo" />
+            <img src="/logo2.png" alt="Website Logo" />
           </div>
           <ul className="highlight-btn">
             <Link to="/">Home</Link>

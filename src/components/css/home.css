@@ -1,7 +1,30 @@
+:root {
+
+  --gradient2: linear-gradient(
+      45deg,
+      #333333,
+      #dd1818
+  );
+  --gradient3: linear-gradient(135deg,
+  #000000,
+  #434343,
+  #000000
+  );
+  --gradient4: linear-gradient(
+      45deg,
+      #333333,
+      #dd1818,
+      #333333
+  );
+
+  
+}
+
 body, html {
   margin: 0;
   padding: 0;
   width: 100%;
+  background-image: var(--gradient3);
   font-family: 'Poppins', sans-serif;
 }
 

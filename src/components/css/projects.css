@@ -1,3 +1,29 @@
+:root {
+
+    --gradient2: linear-gradient(
+        45deg,
+        #333333,
+        #dd1818
+    );
+    --gradient3: linear-gradient(135deg,
+    #000000,
+    #434343,
+    #000000
+    );
+    --gradient4: linear-gradient(
+        45deg,
+        #FFFFFF,
+        #F5F5F5,
+        #E0E0E0
+    );
+
+    
+}
+
+html, body {
+    background-image: none;
+}
+
 
 .project-grid {
     display: grid;
@@ -7,7 +33,7 @@
 }
 
 .project-card {
-    background: #fff;
+    background: #FAFAFA;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-decoration: none;

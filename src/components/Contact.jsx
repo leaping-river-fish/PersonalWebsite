@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import "./css/contact.css";
 
 
@@ -55,7 +55,6 @@ function Contact() {
         setStatus("Error: Could not connect to server.");
       }
     };
-
 
     return (
       <div className="page-container">

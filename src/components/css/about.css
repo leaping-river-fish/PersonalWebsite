@@ -1,4 +1,4 @@
-/*to do: finish and implement chat bot backend, improve visual of chat*/
+
 
 :root {
   font-family: Inter, system-ui, Avenir, Arial, Helvetica, sans-serif;
@@ -14,20 +14,38 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
+  --gradient2: linear-gradient(
+        45deg,
+        #333333,
+        #dd1818
+    );
+    --gradient3: linear-gradient(135deg,
+    #000000,
+    #434343,
+    #000000
+    );
+    --gradient4: linear-gradient(
+        45deg,
+        #333333,
+        #dd1818,
+        #333333
+    );
+
 }
 
  body, html {
   scroll-behavior: smooth;
+  background-image: none;
 }
 
 .about-wrapper {
   margin: auto;
-  border: 1px solid #555;
+  border: 2px solid #555;
   width: 90%;
   max-width: 800px;
   padding: 20px;
   border-radius: 10px;
-  background: rgba(0, 0, 0, 0.5);
+  background: #202123;
 }
 
 .about-text {
@@ -101,7 +119,7 @@ p span:first-child {
   border-radius: 20px;
   padding: 10px;
   font-size: 1rem;
-  background-color: rgb(25, 23, 23);
+  background-color: #2E2F34;
   color: #FFFFFF;
 }
 

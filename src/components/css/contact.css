@@ -1,3 +1,24 @@
+:root {
+
+    --gradient2: linear-gradient(
+        45deg,
+        #333333,
+        #dd1818
+    );
+    --gradient3: linear-gradient(135deg,
+    #000000,
+    #434343,
+    #000000
+    );
+    --gradient4: linear-gradient(
+        45deg,
+        #333333,
+        #dd1818,
+        #333333
+    );
+
+    
+}
 
 html, body {
     /* height: 100%; */
@@ -6,6 +27,7 @@ html, body {
     display: flex;
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
+    background-image: var(--gradient3);
 }
 
 .page-container {
@@ -59,10 +81,10 @@ html, body {
 }
 
 .contact-form {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #202123;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 10px #202123;
     width: 100%;
     max-width: 500px;
 }
@@ -98,7 +120,7 @@ html, body {
 }
 
 .submit-btn {
-    background-image: var(--gradient2);
+    background-color:#E74C3C;
     color: #FFFFFF;
     padding: 15px 25px;
     border: none;
@@ -109,7 +131,7 @@ html, body {
 }
 
 .submit-btn:hover {
-    background-image: var(--gradient4);
+    background-color:#C0392B;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
