@@ -38,21 +38,37 @@
   background-image: none;
 }
 
-.about-wrapper {
+.chat-section {
+  padding-bottom: none;
+}
+
+.chat-wrapper {
   margin: auto;
   border: 2px solid #555;
   width: 90%;
   max-width: 800px;
+  min-height: 400px;
   padding: 20px;
   border-radius: 10px;
   background: #202123;
+  box-shadow: 4px 4px 15px rgba(255, 255, 255, 0.3);
+  /* border: 1px solid red; */
 }
 
-.about-text {
+.chat-text {
   font-size: 2.5em;
   line-height: 1.1;
   text-align: center;
-  position: sticky;
+  position: relative;
+  top: 0;
+  background-color: none;
+  margin-bottom: 20px;
+}
+.chat-subtext {
+  font-size: 1.5em;
+  line-height: 1.1;
+  text-align: center;
+  position: relative;
   top: 0;
   background-color: none;
   margin-bottom: 20px;
@@ -63,7 +79,7 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  min-height: 200px;
+  min-height: 300px;
   max-height: 50vh;
   overflow: auto;
   padding: 10px;
@@ -128,6 +144,10 @@ p span:first-child {
   background-color: rgb(40, 35, 35);
 }
 
+.warning {
+  text-align: center;
+}
+
 /*Scroll bar in chat*/
 
 .chat-box::-webkit-scrollbar {
@@ -154,4 +174,97 @@ p span:first-child {
   margin-top: 15px;
   color: #FFFFFF;
 }
+
+/* TIMELINE CONTENT */
+
+.timeline-container {
+  position: relative;
+  width: 100%;
+  padding: 50px 0;
+  overflow: hidden;
+}
+
+
+
+.timeline-text {
+  padding-top: 30px;
+  padding-left: 30px;
+  font-size: 8rem;
+  line-height: 0.1;
+  text-align: left;
+  position: relative;
+  top: 0;
+  background-color: none;
+  z-index: 1;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+.rifo-section {
+  background-color:#007ACC;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.rifo-title {
+  color: rgba(255, 255, 255, 0.87);
+  line-height: 1.1;
+  text-align: center;
+  position: relative;
+  top: 0;
+  background-color: none;
+  margin-bottom: 20px;
+}
+
+.rifo-description {
+  width: 50%;
+  text-align: left; 
+  margin-top: 100px;
+  max-width: 500px;
+  justify-content: baseline;
+  padding-left: 150px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.rifo-grid {
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+  /* border: 1px solid red; */
+}
+
+.rifo-image {
+  width: 75%;
+  max-height: 500px;
+  border-radius: 20px;
+  transform: 1.5s ease;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.rifo-image:hover {
+  transform: translateY(-5px)
+}
+
+.rifo-image-container {
+  text-align: right;
+  padding-left: 150px;
+  padding-top: 100px;
+  padding-bottom: 150px;
+}
+
+.tbc {
+  text-align: center;
+}
+
+
+
 

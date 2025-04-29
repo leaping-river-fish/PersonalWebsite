@@ -87,44 +87,80 @@ function About() {
   };
 
   return (
-    <div className="about-wrapper">
-      <div className="about-container">
-        {/* AI Chat Section */}
-        <div className="chat-container">
-          <h1 className="about-text">What Would You Like to Know?</h1>
+    <div className="about-page">
+      <section className="chat-section">
+        <h1 className="chat-text">Ask Lumie About Me</h1>
+        <h6 className="chat-subtext">Enter a question like: "Who is Nick Zheng?"</h6>
+        <div className="chat-wrapper">
+          <div className="chat-container">
+            {/* AI Chat Section */}
+            <div className="chat-container">
 
-          <section className="chat-box">
-            {chats && chats.length
-              ? chats.map((chat, index) => (
-                <p key={index} className={chat.role === "user" ? "user_msg" : "assistant_msg"}>
-                  <span>{chat.content}</span>
+              <section className="chat-box">
+                {chats && chats.length
+                  ? chats.map((chat, index) => (
+                    <p key={index} className={chat.role === "user" ? "user_msg" : "assistant_msg"}>
+                      <span>{chat.content}</span>
+                    </p>
+                  ))
+                  : ""}
+              </section>
+
+              <div className={isTyping ? "" : "hide"}>
+                <p className="chat">
+                  <i>{isTyping ? `Typing${currentPhase}` : ""}</i>
                 </p>
-              ))
-              : ""}
-          </section>
-          <div className={isTyping ? "" : "hide"}>
-            <p className="chat">
-              <i>{isTyping ? `Typing${currentPhase}` : ""}</i>
-            </p>
-          </div>
+              </div>
 
-          <form className="about-form" action="" onSubmit={(e) => chat(e, message)}>
-            <input className="about-input"
-              type="text"
-              name="message"
-              value={message}
-              placeholder="Ask a question..."
-              onChange={(e) => setMessage(e.target.value)}
-            />
-          </form>
-          {chats.length > 0 && (
-            <button className="clear-chat-btn" onClick={clearChat}>
-              Clear Chat
-            </button>
-          )}
+              <form className="about-form" action="" onSubmit={(e) => chat(e, message)}>
+                <input className="about-input"
+                  type="text"
+                  name="message"
+                  value={message}
+                  placeholder="Ask a question..."
+                  onChange={(e) => setMessage(e.target.value)}
+                />
+              </form>
+
+              {chats.length > 0 && (
+                <button className="clear-chat-btn" onClick={clearChat}>
+                  Clear Chat
+                </button>
+              )}
+            </div>
+          </div>
         </div>
-          {/* add a timeline + some text for context*/}
-        
+        <p className="warning">As the AI is relatively new and not completely trained, some of its answers may not be 100% accurate and/or fabricated</p>
+      </section>
+
+      {/*timeline*/}
+      <div className="timeline-container">
+        <h1 className="timeline-text">Career Timeline</h1>
+
+        <svg className="timeline-line">
+          <path id="timeline-path" d="M990,120 H1113 V920 H300 V1200" stroke="#ffffff" strokeWidth="3" fill="transparent" strokeDasharray="5,5"/>
+        </svg>
+
+        <section className="rifo-section">
+          <h1 className="rifo-title">RIFO Holding Group</h1>
+          <div className="rifo-grid">
+            <div className="rifo-description">
+                <p>
+                  During my first internship, I worked as a QA Engineer for RIFO Holding Group as part of the R&D team. I automated test cases for their client, agent, and vendor applications using Python scripts. Throughout the internship, I built strong relationships with my colleagues and developed valuable skills in app testing. I also gained hands-on experience with tools such as Appium and Selenium for automation, as well as Clipchamp and Canva for creating demo videos through video editing.
+                </p>
+            </div>
+            
+            <div className="rifo-image-container">
+              <a href="https://www.rifo.com/" target="_blank" rel="noopener noreferrer">
+                <img src="timeline_imgs/rifo.png" className="rifo-image"></img>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h1 className="tbc">To be continued...</h1>
+        </section>
       </div>
     </div>
   );
