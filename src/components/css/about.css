@@ -173,6 +173,16 @@ p span:first-child {
   background-color: darkslategray;
   margin-top: 15px;
   color: #FFFFFF;
+  border-radius: 8px;
+  border: none;
+  height: 30px;
+  width: 100px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.clear-chat-btn:hover {
+  transform: translateY(-2px);
 }
 
 /* TIMELINE CONTENT */
