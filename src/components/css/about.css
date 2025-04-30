@@ -220,6 +220,7 @@ p span:first-child {
   line-height: 1.1;
   text-align: center;
   position: relative;
+  font-size: 3rem;
   top: 0;
   background-color: none;
   margin-bottom: 20px;
@@ -263,6 +264,7 @@ p span:first-child {
 
 .tbc {
   text-align: center;
+  font-size: 2rem;
 }
 
 
