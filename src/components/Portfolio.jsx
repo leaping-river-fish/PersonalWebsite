@@ -6,7 +6,7 @@ function Portfolio() {
   return (
     <div>
       <div className="portfolio-container">
-        <h1>My Portfolio</h1>
+        <h1 className='portfolio-title'>My Portfolio</h1>
         
         {/* Portfolio Sections */}
         <section className="portfolio-gallery">
