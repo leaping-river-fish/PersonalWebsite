@@ -4,6 +4,8 @@ import "./css/contact.css";
 
 function Contact() {
 
+  const baseUrl = import.meta.env.VITE_API_URL;
+
     const [formData, setFormData] = useState({
       name: "",
       email: "",
@@ -25,7 +27,7 @@ function Contact() {
       setStatus({ type: "", message: "Sending..." });
 
       try {
-        const response = await fetch("http://localhost:5001/send", {
+        const response = await fetch(`${baseUrl}/send`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
