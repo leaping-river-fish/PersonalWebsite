@@ -2,6 +2,8 @@ import react, { createContext, useContext, useState, useEffect } from 'react';
 
 const ImageContext = createContext();
 
+const baseUrl = import.meta.env.VITE_API_URL;
+
 export const useImageContext = () => {
     return useContext(ImageContext);
 };
@@ -17,9 +19,9 @@ export const ImageProvider = ({ children }) => {
         const loadImages = async () => {
             try {
                 const [fundraising, eventAdvertising, art] = await Promise.all([
-                    fetch("http://localhost:5001/getImages?category=Fundraising").then(res => res.json()),
-                    fetch("http://localhost:5001/getImages?category=Event-Advertising").then(res => res.json()),
-                    fetch("http://localhost:5001/getImages?category=Art").then(res => res.json())
+                    fetch(`${baseUrl}/getImages?category=Fundraising`).then(res => res.json()),
+                    fetch(`${baseUrl}/getImages?category=Event-Advertising`).then(res => res.json()),
+                    fetch(`${baseUrl}/getImages?category=Art`).then(res => res.json())
                 ]);
 
                 setFundraisingImages(fundraising);
