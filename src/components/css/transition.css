@@ -1,0 +1,69 @@
+
+/*Grid Transition*/
+.transition-grid {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    pointer-events: none;
+    z-index: 9999;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    overflow: hidden;
+}
+
+.tile {
+    background-color: rgba(255, 255, 255, 1);
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.6s ease;
+    width: 100%;
+    height: 100%;
+}
+
+.tile.bubble-up {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+.tile.bubble-down {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.tile.diagonal-fall {
+    opacity: 0;
+    transform: translate(100px, 100px) scale(0);
+}
+
+@keyframes bubbleUp {
+    0% {
+        transform: scale(0) translateY(30px);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2) translateY(-50px);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) translateY(0); 
+    }
+}
+
+
+@keyframes bubbleDown {
+    0% {
+        opacity: 1;
+        transform: scale(1) translateY(0) translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0) translateY(100px) translateX(100px);
+    }
+}
+
+
+
+
+

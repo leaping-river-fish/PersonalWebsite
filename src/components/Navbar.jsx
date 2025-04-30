@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./css/navbar.css";
 
-const Navbar = () => {
+function Navbar({ onNavigate }) {
 
     return (
         <nav>
@@ -10,19 +10,19 @@ const Navbar = () => {
             <img src="/logo2.png" alt="Website Logo" />
           </div>
           <ul className="highlight-btn">
-            <Link to="/">Home</Link>
+            <Link to="/" onClick={(e) => onNavigate(e, "/")}>Home</Link>
           </ul>
           <ul className="highlight-btn">
-            <Link to="/about">About</Link>
+            <Link to="/about" onClick={(e) => onNavigate(e, "/about")}>About</Link>
           </ul>
           <ul className="highlight-btn">
-            <Link to="/projects">Projects</Link>
+            <Link to="/projects" onClick={(e) => onNavigate(e, "/projects")}>Projects</Link>
           </ul>
           <ul className="highlight-btn">
-            <Link to="/portfolio">Portfolio</Link>
+            <Link to="/portfolio" onClick={(e) => onNavigate(e, "/portfolio")}>Portfolio</Link>
           </ul>
           <ul className="contact-btn">
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact" onClick={(e) => onNavigate(e, "/contact")}>Contact</Link>
           </ul>
         </nav>
 

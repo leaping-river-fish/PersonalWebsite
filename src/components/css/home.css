@@ -34,11 +34,12 @@ body, html {
     height: 70%;
     top: 5%;
     margin: auto;
-    padding: 0;
+    padding-top: 140px;
     position: relative;
     color: #FFFFFF;
     justify-content: space-between;
     display: flex;
+    z-index: 1;
     /* border: 1px solid red; */
 }
 
