@@ -54,7 +54,10 @@ function Contact() {
         }
       } catch (error) {
         console.error("Fetch error:", error);
-        setStatus("Error: Could not connect to server.");
+        setStatus({
+          type: "error",
+          message: "Error: Could not connect to server."
+        });
       }
     };
 
