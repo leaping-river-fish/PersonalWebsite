@@ -53,7 +53,9 @@ function About() {
     const start = Date.now();
 
     try {
-      const response = await fetch("http://localhost:5000/", {
+      const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
+      const response = await fetch(`${backendUrl}/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ chats: updatedChats }),
