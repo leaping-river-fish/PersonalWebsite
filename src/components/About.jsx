@@ -64,11 +64,11 @@ function About() {
     const start = Date.now();
 
     try {
-      const backendUrl = import.meta.env.VITE_CHATBOT_API_URL;
+      const backendUrl = import.meta.env.VITE_CHATBOT_API_URL || "https://personal-website-backend-54b7.onrender.com/chat";
 
       console.log("Using backend URL:", backendUrl); //test
 
-      const response = await fetch(`${backendUrl}/chat`, {
+      const response = await fetch(`${backendUrl}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ chats: updatedChats }),
