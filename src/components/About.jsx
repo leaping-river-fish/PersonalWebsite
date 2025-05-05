@@ -64,10 +64,8 @@ function About() {
     const start = Date.now();
 
     try {
-      const backendUrl = 'https://personal-website-backend-54b7.onrender.com' //product
-      // const backendUrl = 'http://localhost:5001/chat' //development
-
-      // const backendUrl = process.env.VITE_BACKEND_URL;
+      const backendUrl = process.env.CHATBOT_API_URL;
+      
       console.log("Using backend URL:", backendUrl); //test
 
       const response = await fetch(`${backendUrl}/`, {
