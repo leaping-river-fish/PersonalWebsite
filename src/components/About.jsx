@@ -64,7 +64,7 @@ function About() {
     const start = Date.now();
 
     try {
-      const backendUrl = process.env.CHATBOT_API_URL;
+      const backendUrl = import.meta.env.VITE_CHATBOT_API_URL;
 
       console.log("Using backend URL:", backendUrl); //test
 
