@@ -68,7 +68,7 @@ function About() {
 
       console.log("Using backend URL:", backendUrl); //test
 
-      const response = await fetch(`${backendUrl}/chat`, {
+      const response = await fetch(`${backendUrl}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ chats: updatedChats }),
