@@ -38,9 +38,20 @@ function About() {
   }, [chats]);
 
   const chat = async (e, message) => {
+    console.log("chat() called");
+    if (!e || typeof e.preventDefault !== "function") {
+      console.error("Invalid event:", e);
+      return;
+    }
+
     e.preventDefault();
 
-    if (!message) return;
+    if (!message) {
+      console.warn("Empty message submitted");
+      return;
+    }
+
+    console.log("Message submitted:", message);
 
     setIsTyping(true);
 
@@ -53,7 +64,11 @@ function About() {
     const start = Date.now();
 
     try {
-      const backendUrl = process.env.REACT_APP_BACKEND_URL;
+      const backendUrl = 'https://personal-website-backend-54b7.onrender.com' //product
+      // const backendUrl = 'http://localhost:5001/chat' //development
+
+      // const backendUrl = process.env.VITE_BACKEND_URL;
+      console.log("Using backend URL:", backendUrl); //test
 
       const response = await fetch(`${backendUrl}/`, {
         method: "POST",
