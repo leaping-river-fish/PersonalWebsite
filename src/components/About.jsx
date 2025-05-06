@@ -55,7 +55,6 @@ function About() {
 
     setIsTyping(true);
 
-    setIsTyping(true);
     let updatedChats = [...chats, { role: "user", content: message }];
     setChats(updatedChats);
 
@@ -109,7 +108,6 @@ function About() {
         <div className="chat-wrapper">
           <div className="chat-container">
             {/* AI Chat Section */}
-            <div className="chat-container">
 
               <section className="chat-box">
                 {chats && chats.length
@@ -142,7 +140,6 @@ function About() {
                   Clear Chat
                 </button>
               )}
-            </div>
           </div>
         </div>
         <p className="warning">As the AI is relatively new and not completely trained, some of its answers may not be 100% accurate and/or fabricated</p>
