@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import './css/about.css';
 
 
@@ -21,6 +21,8 @@ function About() {
   const [currentPhase, setCurrentPhase] = useState([0]);
   const [index, setIndex] = useState(0);
 
+  const chatEndRef = useRef(null);
+
   useEffect (() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % dotAnimation.length);
@@ -35,6 +37,12 @@ function About() {
 
   useEffect (() => {
     sessionStorage.setItem("chatMessages", JSON.stringify(chats));
+  }, [chats]);
+
+  useEffect(() => {
+    if (chatEndRef.current) {
+      chatEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   }, [chats]);
 
   const chat = async (e, message) => {
@@ -124,6 +132,7 @@ function About() {
                     </p>
                   ))
                   : ""}
+                <div ref={chatEndRef} />
               </section>
 
               <div className={isTyping ? "" : "hide"}>
