@@ -69,6 +69,7 @@ function About() {
 
       const response = await fetch(`${backendUrl}`, {
         method: "POST",
+        credentials: "include",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ chats: updatedChats }),
       });
@@ -76,17 +77,23 @@ function About() {
       const data = await response.json();
       console.log("AI responded with:", data);
 
-      const elapsed = Date.now() - start;
+      if (data && data.output && data.output.role) {
 
-      const minDelay = 2000; 
-      if (elapsed < minDelay) {
-        await new Promise((resolve) => setTimeout(resolve, minDelay - elapsed));
+        const elapsed = Date.now() - start;
+
+        const minDelay = 2000; 
+        if (elapsed < minDelay) {
+          await new Promise((resolve) => setTimeout(resolve, minDelay - elapsed));
+        }
+        
+        setIsTyping(false);
+
+        const newChats = [...updatedChats, data.output];
+        setChats(newChats);
+      } else {
+        console.error("Invalid response from AI:", data);
+        setIsTyping(false);
       }
-      
-      setIsTyping(false);
-
-      const newChats = [...updatedChats, data.output];
-      setChats(newChats);
 
     } catch (error) {
       console.log("Error fetching chat response:", error);
@@ -104,7 +111,7 @@ function About() {
     <div className="about-page">
       <section className="chat-section">
         <h1 className="chat-text">Ask Lumie About Me</h1>
-        <h6 className="chat-subtext">Enter a question like: "Who is Nick Zheng?"</h6>
+        <h6 className="chat-subtext">Say Hello!</h6>
         <div className="chat-wrapper">
           <div className="chat-container">
             {/* AI Chat Section */}
