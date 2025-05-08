@@ -40,10 +40,10 @@ function About() {
   }, [chats]);
 
   useEffect(() => {
-    if (isTyping && chatBoxRef.current) {
+    if (chatBoxRef.current) {
       chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
     }
-  }, [isTyping]);
+  }, [chats, isTyping]);
 
   const chat = async (e, message) => {
     console.log("chat() called");
