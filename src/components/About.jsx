@@ -21,7 +21,7 @@ function About() {
   const [currentPhase, setCurrentPhase] = useState([0]);
   const [index, setIndex] = useState(0);
 
-  const chatEndRef = useRef(null);
+  const chatBoxRef = useRef(null);
 
   useEffect (() => {
     const interval = setInterval(() => {
@@ -40,8 +40,8 @@ function About() {
   }, [chats]);
 
   useEffect(() => {
-    if (chatEndRef.current) {
-      chatEndRef.current.scrollIntoView({ behavior: "smooth" });
+    if (chatBoxRef.current) {
+      chatBoxRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [chats]);
 
@@ -124,7 +124,7 @@ function About() {
           <div className="chat-container">
             {/* AI Chat Section */}
 
-              <section className="chat-box">
+              <section className="chat-box" ref={chatBoxRef}>
                 {chats && chats.length
                   ? chats.map((chat, index) => (
                     <p key={index} className={chat.role === "user" ? "user_msg" : "assistant_msg"}>
@@ -132,7 +132,6 @@ function About() {
                     </p>
                   ))
                   : ""}
-                <div ref={chatEndRef} />
               </section>
 
               <div className={isTyping ? "" : "hide"}>
