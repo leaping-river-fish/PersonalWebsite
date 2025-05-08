@@ -40,10 +40,10 @@ function About() {
   }, [chats]);
 
   useEffect(() => {
-    if (chatBoxRef.current) {
-      chatBoxRef.current.scrollIntoView({ behavior: "smooth" });
+    if (isTyping && chatBoxRef.current) {
+      chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
     }
-  }, [chats]);
+  }, [isTyping]);
 
   const chat = async (e, message) => {
     console.log("chat() called");
@@ -123,7 +123,6 @@ function About() {
         <div className="chat-wrapper">
           <div className="chat-container">
             {/* AI Chat Section */}
-
               <section className="chat-box" ref={chatBoxRef}>
                 {chats && chats.length
                   ? chats.map((chat, index) => (
