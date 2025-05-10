@@ -23,7 +23,9 @@ const GitProjects = () => {
         rust: "#dea584",
         nodejs: "#8CC84B",
         react: "#61DAFB",
-        wip: "#000"
+        golang: "#00ADD8",
+        wip: "#000",
+        tailwindcss:"#38BDF8",
       };
     
       const libraryColors = {
@@ -31,7 +33,7 @@ const GitProjects = () => {
         vite: "#FF4D4F",
         numpy: "#4F8B31",
         expressjs: "#444444",
-        cv2: "#EE4B2B",
+        cv2: "#5C3EE8",
       }
 
       const extraColors = {
@@ -42,6 +44,7 @@ const GitProjects = () => {
         simulator: "#FF7F50",
         ai: "#00CFFF",
         api: "#34B7F1",
+        app: "#3B82F6",
       }
 
     const pastelColorMap = {};
