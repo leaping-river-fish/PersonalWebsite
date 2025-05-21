@@ -69,9 +69,10 @@ const Gallery = () => {
   return (
     <div className="gallery-container">
       {isLoading && <div className="loading-spinner"></div>}
+      {renderGallery("Art", artImages)}
       {renderGallery("Fundraising", fundraisingImages)}
       {renderGallery("Event Advertising", eventImages)}
-      {renderGallery("Art", artImages)}
+      
 
       {/* Lightbox */}
       {isLightboxOpen && currentImageIndex !== null && (
